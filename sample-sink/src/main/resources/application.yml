@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: sample-sink
+
+#### Enable Metrics #############################
+management.endpoint.health.show-details: always
+management.endpoints.web.exposure.include: health,info,metrics,bindings
+
+#### Kafka Binder properties ####################
+spring.cloud.stream.kafka.binder.brokers: vindaloo:9092
+spring.cloud.stream.bindings.input.destination: test-data
+logging.level.org.springframework.cloud.stream: DEBUG
